@@ -69,4 +69,13 @@ export class MapBoxComponent {
         .addTo(this.map);
     }
 
+    public zoom_to (long, lat) {
+        if (lat && long) {
+            this.map.flyTo({
+                center: [parseFloat(long), parseFloat(lat)]
+            });
+            this.marker.setLngLat(long, lat);
+        }
+    } 
+
 }
